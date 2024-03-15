@@ -16,7 +16,6 @@ public class FormController {
 
     @PostMapping("/register")
     public String userRegister(@ModelAttribute UserEntity userEntity){
-        System.out.println(userEntity);
         String userRegister = userService.userRegister(userEntity);
 
         if (userRegister != null)
@@ -28,7 +27,6 @@ public class FormController {
 
     @PostMapping("/login")
     public String userLogin(@ModelAttribute LoginUser loginUser){
-        System.out.println(loginUser);
         String login = userService.loginUserWithEmail(loginUser);
         return "hello";
     }
